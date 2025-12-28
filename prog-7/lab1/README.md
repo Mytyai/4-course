@@ -7,6 +7,7 @@
 [Код](https://github.com/Mytyai/4-course/tree/master/prog-7/lab1/code/1.1.py)
 
 Результат:
+
 ![alt text](photo/1.png)
 
 ### Часть 2: Потоки в Python
@@ -14,6 +15,7 @@
 [Код](https://github.com/Mytyai/4-course/tree/master/prog-7/lab1/code/1.2.py)
 
 Результат:
+
 ![alt text](photo/2.png)
 
 ### Часть 3: Concurrency и Futures
