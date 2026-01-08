@@ -12,7 +12,7 @@
 
 ### Список практических работ:
 - [Практическая работа - Настройка OAuth 2.0 авторизации в Django приложении](https://github.com/Mytyai/4-course/tree/main/prog-7/prac1)
-- [Практическая работа - RESTful веб-приложение на Spring Boot](https://github.com/Mytyai/4-course/tree/main/prog-7/prac2)
+- [x] [Практическая работа - RESTful веб-приложение на Spring Boot](https://github.com/Mytyai/4-course/tree/main/prog-7/prac2)
 - [Практическая работа - RabbitMQ](https://github.com/Mytyai/4-course/tree/main/prog-7/prac3)
 
 ### Список заданий:
