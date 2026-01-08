@@ -4,7 +4,7 @@
 
 ### Часть 1: Простое интегрирование
 
-[Код](https://github.com/Mytyai/4-course/tree/master/prog-7/lab1/code/1.1.py)
+[Код](https://github.com/Mytyai/4-course/tree/main/prog-7/lab1/code/1.1.py)
 
 Результат:
 
@@ -12,7 +12,7 @@
 
 ### Часть 2: Потоки в Python
 
-[Код](https://github.com/Mytyai/4-course/tree/master/prog-7/lab1/code/1.2.py)
+[Код](https://github.com/Mytyai/4-course/tree/main/prog-7/lab1/code/1.2.py)
 
 Результат:
 
@@ -20,7 +20,7 @@
 
 ### Часть 3: Concurrency и Futures
 
-[Код](https://github.com/Mytyai/4-course/tree/master/prog-7/lab1/code/1.3.py)
+[Код](https://github.com/Mytyai/4-course/tree/main/prog-7/lab1/code/1.3.py)
 
 Результат:
 
@@ -28,7 +28,7 @@
 
 ### Часть 4: Асинхронность
 
-[Код](https://github.com/Mytyai/4-course/tree/master/prog-7/lab1/code/1.4)
+[Код](https://github.com/Mytyai/4-course/tree/main/prog-7/lab1/code/1.4)
 
 Результат:
 

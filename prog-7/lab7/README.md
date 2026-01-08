@@ -4,7 +4,7 @@
 
 ### Создание простого REST API
 
-[Код](https://github.com/Mytyai/4-course/tree/master/prog-7/lab7/fastapi_books)
+[Код](https://github.com/Mytyai/4-course/tree/main/prog-7/lab7/fastapi_books)
 
 Результат выполнения кода:
 
@@ -22,5 +22,5 @@
 
 ### Изучение OpenAPI спецификации
 
-Полученный файл: [openapi.json](https://github.com/Mytyai/4-course/tree/master/prog-7/lab7/fastapi_books/openapi.json)
+Полученный файл: [openapi.json](https://github.com/Mytyai/4-course/tree/main/prog-7/lab7/fastapi_books/openapi.json)
 
