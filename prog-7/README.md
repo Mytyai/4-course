@@ -3,7 +3,7 @@
 ### Список лабораторных работ:
 - [x] [Лабораторная работа #1](https://github.com/Mytyai/4-course/tree/main/prog-7/lab1)
 - [x] [Лабораторная работа #2 - WSGI и ASGI](https://github.com/Mytyai/4-course/tree/main/prog-7/lab2) 
-- [Лабораторная работа #3 - Введение в Django](https://github.com/Mytyai/4-course/tree/main/prog-7/lab3)
+- [x] [Лабораторная работа #3 - Введение в Django](https://github.com/Mytyai/4-course/tree/main/prog-7/lab3)
 - [Лабораторная работа #4 - Применение форм в Django. Аутентификация и регистрация пользователей.](https://github.com/Mytyai/4-course/tree/main/prog-7/lab4)
 - [Лабораторная работа #5 - Django REST Framework: (микро)сервисы](https://github.com/Mytyai/4-course/tree/main/prog-7/lab5)
 - [x] [Лабораторная работа - практика OAuth 2.0 в Python](https://github.com/Mytyai/4-course/tree/main/prog-7/lab6)
