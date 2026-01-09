@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block title %}Polls App{% endblock %}
+    {% load static %}
+    {% load socialaccount %}
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+</head>
+<body>
+
+{% if user.is_authenticated %}
+    Пользователь: {{ user.username }} |
+    <form action="{% url 'account_logout' %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Выйти</button>
+    </form> |
+    <a href="{% url 'polls:create_question' %}">Создать опрос</a>
+{% else %}
+    <a href="{% provider_login_url 'google' %}">Войти через Google</a> |
+    <a href="{% url 'polls:register' %}">Регистрация</a>
+{% endif %}
+
+<hr>
+
+{% block content %}{% endblock %}
+</body>
+</html>
