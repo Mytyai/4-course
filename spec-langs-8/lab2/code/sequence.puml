@@ -1,0 +1,22 @@
+@startuml
+title Диаграмма последовательности\n"Получение прогноза цены"
+
+actor "Пользователь" as User
+participant "Интерфейс" as UI
+participant "ForecastService" as Service
+participant "DataProcessor" as Processor
+participant "ML Модель" as Model
+
+User -> UI : Ввод данных
+UI -> Service : predict(request)
+
+Service -> Processor : prepare_data(request)
+Processor --> Service : features
+
+Service -> Model : predict(features)
+Model --> Service : price
+
+Service --> UI : результат
+UI --> User : отображение прогноза
+
+@enduml

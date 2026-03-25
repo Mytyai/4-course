@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+title Диаграмма вариантов использования\n"Система прогнозирования цен на авиабилеты"
+
+actor "Пользователь" as User
+
+rectangle "Система прогнозирования цен на авиабилеты" {
+
+  usecase "Авторизация" as UC1
+  usecase "Ввести параметры перелёта" as UC2
+  usecase "Сформировать запрос" as UC3
+  usecase "Получить прогноз цены" as UC4
+  usecase "Просмотреть историю прогнозов" as UC5
+  usecase "Сохранить результат" as UC6
+  usecase "Обработать данные" as UC7
+  usecase "Выполнить прогноз\n(ML модель)" as UC8
+
+}
+
+User --> UC1
+User --> UC2
+User --> UC4
+User --> UC5
+
+UC4 .> UC3 : <<include>>
+UC3 .> UC2 : <<include>>
+UC4 .> UC7 : <<include>>
+UC4 .> UC8 : <<include>>
+UC4 .> UC6 : <<include>>
+
+@enduml

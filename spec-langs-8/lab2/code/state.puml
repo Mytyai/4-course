@@ -1,0 +1,21 @@
+@startuml
+title Диаграмма состояний\n"Жизненный цикл запроса на прогноз"
+
+[*] --> New
+
+New --> Validating : submit()
+Validating --> Preprocessing : data_ok
+Validating --> Error : data_invalid
+
+Preprocessing --> Predicting : features_ready
+Preprocessing --> Error : preprocess_failed
+
+Predicting --> Completed : prediction_ready
+Predicting --> Error : model_failed
+
+Completed --> Archived : save_history()
+
+Error --> New : correct_and_resubmit()
+Archived --> [*]
+
+@enduml

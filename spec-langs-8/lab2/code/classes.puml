@@ -1,0 +1,41 @@
+@startuml
+title Диаграмма классов\n"Система прогнозирования цен на авиабилеты"
+skinparam classAttributeIconSize 0
+
+class User {
+  id: int
+  name: str
+  email: str
+}
+
+class ForecastRequest {
+  origin: str
+  destination: str
+  departure_date: date
+  passengers: int
+}
+
+class PredictionResult {
+  price: float
+  created_at: datetime
+}
+
+class ForecastService {
+  +predict_price(request): PredictionResult
+}
+
+class DataProcessor {
+  +prepare_data(request)
+}
+
+class PriceModel {
+  +predict(features): float
+}
+
+User --> ForecastRequest
+ForecastService --> ForecastRequest
+ForecastService --> DataProcessor
+ForecastService --> PriceModel
+ForecastService --> PredictionResult
+
+@enduml
