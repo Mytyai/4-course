@@ -1,21 +1,21 @@
 @startuml
 title Диаграмма состояний\n"Жизненный цикл запроса на прогноз"
 
-[*] --> New
+[*] --> Создан
 
-New --> Validating : submit()
-Validating --> Preprocessing : data_ok
-Validating --> Error : data_invalid
+Создан --> Проверка : submit()
+Проверка --> Подготовка_данных : data_ok
+Проверка --> Ошибка : data_invalid
 
-Preprocessing --> Predicting : features_ready
-Preprocessing --> Error : preprocess_failed
+Подготовка_данных --> Прогнозирование : features_ready
+Подготовка_данных --> Ошибка : preprocess_failed
 
-Predicting --> Completed : prediction_ready
-Predicting --> Error : model_failed
+Прогнозирование --> Сохранение : prediction_ready
+Прогнозирование --> Ошибка : model_failed
 
-Completed --> Archived : save_history()
+Сохранение --> Завершён : saved
 
-Error --> New : correct_and_resubmit()
-Archived --> [*]
+Ошибка --> Создан : исправить_и_повторить
+Завершён --> [*]
 
 @enduml

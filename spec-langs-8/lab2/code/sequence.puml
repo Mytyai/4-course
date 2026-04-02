@@ -3,20 +3,35 @@ title Диаграмма последовательности\n"Получени
 
 actor "Пользователь" as User
 participant "Интерфейс" as UI
+participant "ForecastController" as Controller
 participant "ForecastService" as Service
 participant "DataProcessor" as Processor
 participant "ML Модель" as Model
+participant "Хранилище истории" as Storage
 
 User -> UI : Ввод данных
-UI -> Service : predict(request)
+UI -> Controller : sendRequest(request)
+Controller -> Service : predict_price(request)
 
-Service -> Processor : prepare_data(request)
-Processor --> Service : features
+Service -> Service : validate(request)
 
-Service -> Model : predict(features)
-Model --> Service : price
+alt Данные некорректны
+  Service --> Controller : ошибка
+  Controller --> UI : сообщение об ошибке
+  UI --> User : показать ошибку
+else Данные корректны
+  Service -> Processor : prepare_data(request)
+  Processor --> Service : features
 
-Service --> UI : результат
-UI --> User : отображение прогноза
+  Service -> Model : predict(features)
+  Model --> Service : price
+
+  Service -> Storage : save(result)
+  Storage --> Service : saved
+
+  Service --> Controller : PredictionResult
+  Controller --> UI : результат
+  UI --> User : отображение прогноза
+end
 
 @enduml

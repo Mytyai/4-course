@@ -13,11 +13,16 @@ class ForecastRequest {
   destination: str
   departure_date: date
   passengers: int
+  +validate(): bool
 }
 
 class PredictionResult {
   price: float
   created_at: datetime
+}
+
+class ForecastController {
+  +get_forecast(request): PredictionResult
 }
 
 class ForecastService {
@@ -32,10 +37,17 @@ class PriceModel {
   +predict(features): float
 }
 
+class HistoryRepository {
+  +save(result)
+  +get_all(user)
+}
+
 User --> ForecastRequest
+ForecastController --> ForecastService
 ForecastService --> ForecastRequest
 ForecastService --> DataProcessor
 ForecastService --> PriceModel
 ForecastService --> PredictionResult
+ForecastService --> HistoryRepository
 
 @enduml
