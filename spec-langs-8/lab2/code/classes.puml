@@ -5,49 +5,65 @@ skinparam classAttributeIconSize 0
 class User {
   id: int
   name: str
-  email: str
 }
 
 class ForecastRequest {
   origin: str
   destination: str
   departure_date: date
+  return_date: date
   passengers: int
+  airline: str
+  class_type: str
   +validate(): bool
 }
 
 class PredictionResult {
   price: float
+  currency: str
+  confidence: float
   created_at: datetime
 }
 
 class ForecastController {
-  +get_forecast(request): PredictionResult
+  +get_forecast(request: ForecastRequest): PredictionResult
+  +get_history(user_id: int)
 }
 
 class ForecastService {
-  +predict_price(request): PredictionResult
+  +predict_price(request: ForecastRequest): PredictionResult
+  +build_features(request: ForecastRequest)
+  +postprocess_prediction(price: float): PredictionResult
 }
 
 class DataProcessor {
-  +prepare_data(request)
+  +clean_data(request: ForecastRequest)
+  +encode_features(request: ForecastRequest)
+  +prepare_features(request: ForecastRequest)
 }
 
 class PriceModel {
+  +load_model()
   +predict(features): float
+  +retrain(data)
 }
 
 class HistoryRepository {
-  +save(result)
-  +get_all(user)
+  +save(result: PredictionResult, user_id: int)
+  +get_all(user_id: int)
+  +delete_history(user_id: int)
 }
 
-User --> ForecastRequest
+User --> ForecastController
+
 ForecastController --> ForecastService
-ForecastService --> ForecastRequest
+ForecastController --> ForecastRequest
+
 ForecastService --> DataProcessor
 ForecastService --> PriceModel
 ForecastService --> PredictionResult
 ForecastService --> HistoryRepository
+
+HistoryRepository --> PredictionResult
 
 @enduml
